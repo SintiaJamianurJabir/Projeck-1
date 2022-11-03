@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhaPan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<style>
+:root{
+  --pink:#e84393;
+}
+
+*{
+  margin:0; padding:0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
+}
+
+.heading{
+  text-align: center;
+  font-size: 4rem;
+  color:#333;
+  padding:1rem;
+  margin:2rem 0;
+  background:rgba(255, 51, 153,.05);
+}
+
+.heading span{
+  color:var(--pink);
+}
+
+.btn{
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background:#333;
+  color:rgb(215, 204, 204);
+  padding:.9rem 3.5rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+.btn:hover{
+  background:var(--pink);
+}
+
+section{
+  padding:2rem 9%;
+}
+
+header{
+  position: fixed;
+  top:0; left:0; right:0;
+  background:#fff;
+  padding:2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header a {
+    text-decoration: none;
+}
+
+header .logo{
+  font-size: 3rem;
+  color:#333;
+  font-weight: bolder;
+}
+
+header .logo span{
+  color:var(--pink);
+}
+
+header .navbar a{
+  font-size: 2.5rem;
+  color:rgb(116, 110, 110);
+  margin-left: 1.5rem;
+}
+
+header .navbar a.active{
+  color:#e84393;
+}
+
+header .navbar a:hover{
+  color:var(--pink);
+}
+
+header #toggler{
+  display: none;
+}
+
+header .fa-bars{
+  font-size: 3rem;
+  color:#333;
+  border-radius: .5rem;
+  padding:.5rem 1.5rem;
+  cursor: pointer;
+  border:.1rem solid rgba(0,0,0,.3);
+  display: none;
+}
+
+.portofolio {
+    margin-top: 5vh;
+}
+
+.portofolio .content{
+  flex:1 1 40rem;
+}
+
+.footer .credit{
+    text-align: center;
+    padding:1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color:#333;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    padding-bottom: 9rem;
+}
+
+.footer .credit span{
+    color:var(--pink);
+}
+
+@media (max-width:768px){
+    header .fa-bars{
+        display: block;
+    }
+
+    header #toggler:checked ~ .navbar{
+        clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar{
+        position:absolute;
+        top:100%; left:0; right:0;
+        background:#eee;
+        border-top: .1rem solid rgba(0,0,0,.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        display: block;
+    }
+
+    header .navbar a{
+        margin:1.5rem;
+        padding:1.5rem;
+        background:#fff;
+        border:.1rem solid rgba(0,0,0,.1);
+        display: block;
+    }
+
+    .home .content span{
+        font-size: 2.5rem;
+    }
+}
+
+</style>
+
+<body>
+
+    <!--Bagian Header-->
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+
+        <a href="#" class="logo">Kha<span>Pan</span></a>
+    
+        <nav class="navbar">
+            <a href="header.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="blog.html">Blog</a>
+            <a href="#portofolio" class="active">Portofoilio</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="todos.html">Todos</a>
+        </nav>
+    
+    </header>
+
+
+    <section class="portofolio" id="portofolio">
+        <div class="portofolio">
+            <h1 class="heading"> <span> Portofolio </h1>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="/Final Project 1/img/abon kepiting'.jpg" class="card-img-top" >
+                    <div class="card-body">
+                      <h5 class="card-title"> Abon  Kepiting </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="/Final Project 1/img/amplang.jpg" class="card-img-top" >
+                    <div class="card-body">
+                      <h5 class="card-title">  Amplang  </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="/Final Project 1/img/ubi ungu.jpg" class="card-img-top" >
+                    <div class="card-body">
+                      <h5 class="card-title"> Onde-onde Ubi  Ungu </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="/Final Project 1/img/bubur gunting.jpg" class="card-img-top" >
+                    <div class="card-body">
+                      <h5 class="card-title"> Bubur  Gunting </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                      <img src="/Final Project 1/img/nasi bakar seafood.jpg" class="card-img-top" >
+                      <div class="card-body">
+                        <h5 class="card-title"> Nasi Bakar Seafood </h5>
+                      </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                      <img src="/Final Project 1/img/peyek kepiting.jpg" class="card-img-top" >
+                      <div class="card-body">
+                        <h5 class="card-title"> Peyek Kepiting</h5>
+                      </div>
+                    </div>
+                </div>
+            </div>
+           
+
+        </div>
+    </section>
+
+
+    <section class="footer">
+        <div class="credit"> KhaPan | <span> 2022 </span> </div>
+    </section>
+</body>
+</html>
