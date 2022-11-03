@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhaPan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<style>
+:root{
+  --pink:#e84393;
+}
+
+*{
+  margin:0; 
+  padding:0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
+}
+
+.heading{
+  text-align: center;
+  font-size: 4rem;
+  color:#333;
+  padding:1rem;
+  margin:2rem 0;
+  background:rgba(255, 51, 153,.05);
+}
+
+.heading span{
+  color:var(--pink);
+}
+
+.btn{
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background:#333;
+  color:rgb(215, 204, 204);
+  padding:.9rem 3.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn:hover{
+  background:var(--pink);
+}
+
+section{
+  padding:2rem 9%;
+}
+
+header{
+  position: fixed;
+  top:0; left:0; right:0;
+  background:#fff;
+  padding:2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header a {
+    text-decoration: none;
+}
+
+header .logo{
+  font-size: 3rem;
+  color:#333;
+  font-weight: bolder;
+}
+
+header .logo span{
+  color:var(--pink);
+}
+
+header .navbar a{
+  font-size: 2.5rem;
+  color:rgb(116, 110, 110);
+  margin-left: 1.5rem;
+}
+
+header .navbar a.active{
+  color:#e84393;
+}
+
+header .navbar a:hover{
+  color:var(--pink);
+}
+
+header #toggler{
+  display: none;
+}
+
+header .fa-bars{
+  font-size: 3rem;
+  color:#333;
+  border-radius: .5rem;
+  padding:.5rem 1.5rem;
+  cursor: pointer;
+  border:.1rem solid rgba(0,0,0,.3);
+  display: none;
+}
+
+.todos {
+    margin-top: 5vh;
+}
+
+.todos .content{
+  flex:1 1 40rem;
+}
+
+.footer .credit{
+    text-align: center;
+    padding:1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color:#333;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    padding-bottom: 9rem;
+}
+
+.footer .credit span{
+    color:var(--pink);
+}
+
+#form{
+    margin: 2% 30%;
+}
+
+@media (max-width:768px){
+    header .fa-bars{
+        display: block;
+    }
+
+    header #toggler:checked ~ .navbar{
+        clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar{
+        position:absolute;
+        top:100%; left:0; right:0;
+        background:#eee;
+        border-top: .1rem solid rgba(0,0,0,.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        display: block;
+    }
+
+    header .navbar a{
+        margin:1.5rem;
+        padding:1.5rem;
+        background:#fff;
+        border:.1rem solid rgba(0,0,0,.1);
+        display: block;
+    }
+
+    .home .content span{
+        font-size: 2.5rem;
+    }
+}
+
+</style>
+
+<body>
+
+    <!--Bagian Header-->
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+
+        <a href="#" class="logo">Kha<span>Pan</span></a>
+    
+        <nav class="navbar">
+            <a href="header.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="blog.html">Blog</a>
+            <a href="portofolio.html">Portofoilio</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="#todos" class="active">Todos</a>
+        </nav>
+    
+    </header>
+
+
+    <section class="todos" id="todos">
+        <div class="todos">
+            <h1 class="heading"> <span> Todos </span></h1>
+
+            <div id="form" class="border p-5 rounded">
+
+            </div>
+            <div id="table" class="container-fluid">
+        
+            </div>
+            
+
+        </div>
+    </section>
+
+
+    <section class="footer">
+        <div class="credit"> KhaPan | <span> 2022 </span> </div>
+    </section>
+</body>
+
+<script>
+    var form = `<div>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Your Name">
+    </div>
+    <div class="form-group mt-3">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter Your email">
+    </div>
+    <div class="form-group mt-4">
+        <label for="email">Ulasan</label>
+        <input type="email" class="form-control" id="ulasan" placeholder="Enter Your Ulasan">
+    </div>
+    <button type="submit" class="btn btn-primary mt-3" onclick="save()">Save</button>
+    </div>`;
+
+    function table() {
+        let table = `<table class="table">
+    <thead>
+        <tr>
+        <th clsaa="col-1">NO</th>
+        <th clsaa="col-3">Name</th>
+        <th clsaa="col-4">Email</th>
+        <th clsaa="col-5">Ulasan</th>
+        <th clsaa="col-2">Edit</th>
+        <th clsaa="col-2">Delete</th>
+        </tr>
+    </thead>
+    <tbody>`;
+        for (let i = 0; i < details.length; i++){
+            table = table + `<tr>
+        <td>${i + 1}</td>
+        <td>${details[i].name}</td>
+        <td>${details[i].email}</td>
+        <td>${details[i].ulasan}</td>
+        <td><button type="button" class="btn btn-warning" onclick="edit(${i})">Edit</button></td>
+        <td><button type="button" class="btn btn-danger" onclick="deleteData(${i})">Delete</button></td>
+        </tr> `;
+        };
+        table = table+`</tbody>
+        </table>`;
+        document.getElementById("table").innerHTML = table;
+    };
+    document.getElementById("form").innerHTML = form;
+    details = [];
+    getData();
+    table();
+    function getData(){
+        let Data = localStorage.getItem("details");
+        if (Data) {
+            details = JSON.parse(Data);
+        } else {
+            setData();
+        };
+    };
+    function setData() {
+        localStorage.setItem("details", JSON.stringify(details));
+    };
+    function save() {
+        let name = document.getElementById("name");
+        let email = document.getElementById("email");
+        let ulasan = document.getElementById("ulasan");
+
+        if (name.value == 0) {
+            alert("name is Empty");
+            return
+        }
+        let data = {
+            name: name.value,
+            email: email.value,
+            ulasan: ulasan.value
+        };
+        details.push(data);
+        setData();
+
+        // console.log(details)
+        // console.log(email.value)
+        table();
+        name.value = "";
+        email.value = "";
+        ulasan.value = "";
+    };
+    function deleteData(index) {
+        details.splice(index, 1);
+        setData();
+        table();
+
+        // console.log('delete work')
+        // console.log(details)
+    };
+
+    function edit(index) {
+        let editForm = `<div>
+    <div class="form-group">
+        <label for="name">Update Name</label>
+        <input type="text" value="${details[index].name}" class="form-control" id="newName" aria-describedby="emailHelp" placeholder="Update Your Name">
+    </div>
+    <div class="form-group mt-3">
+        <label for="email">Email</label>
+        <input type="email" value="${details[index].email}" class="form-control" id="newEmail" placeholder="Update Your email">
+    </div>
+    <div class="form-group mt-4">
+        <label for="ulasan">Ulasan</label>
+        <input type="ulasan" value="${details[index].ulasan}" class="form-control" id="newUlasan" placeholder="Update Your ulasan">
+    </div>
+    <button type="submit" class="btn btn-primary mt-3" onclick="update(${index})">Update</button>
+    </div>`;
+        document.getElementById("form").innerHTML = editForm;
+        // console.log('edit work');
+    };
+    function update(index) {
+        let newName = document.getElementById('newName');
+        let newEmail = document.getElementById('newEmail');
+        let newUlasan = document.getElementById('newUlasan');
+
+        details[index] = {
+            name: newName.value,
+            email: newEmail.value,
+            ulasan: newUlasan.value
+        };
+        setData();
+        table();
+        document.getElementById("form").innerHTML = form;
+    // console.log('update work')
+    // console.log(details)
+    }
+</script>
+</html>
